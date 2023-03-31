@@ -14,6 +14,12 @@
     itec@git-tutorial:~$ git clone <repository-url>
 ```
 
+## Remote Add
+### Used to add a new remote repository to a local Git repository
+```sh
+    itec@git-tutorial:~$ git remote add git@github.com:username/git-repo-name.git
+```
+
 ## Status
 ### Shows the current status of changes in the [working directory](./docs/whats-a-working-directory.md)
 ```sh
@@ -33,17 +39,31 @@
     itec@git-tutorial:~$ git checkout <branch-name>  # Switch to an existing branch
 ```
 
+## Rebase
+### Integrates changes from one branch into another branch in a cleaner and more streamlined way than merging
+```sh
+    itec@git-tutorial:~$ git rebase <base_branch> # Applies changes made on a branch to a new base branch without creating a merge commit
+```
+
 ## Add
 ### Add changes to the [staging area](./docs/whats-the-staging-area.md) in preparation for committing.
 ```sh
     itec@git-tutorial:~$ git add <file>    # Add a specific file
-    itec@git-tutorial:~$ git add .         # Add all changed files in the current directory
 ```
 
 ## Commit
 ### [Commit](./docs/whats-a-commit.md) your changes with a descriptive message.
 ```sh
-    itec@git-tutorial:~$ git commit -m "Your commit message"
+    itec@git-tutorial:~$ git commit -a -m "Your commit message"
+    itec@git-tutorial:~$ git show commit_id # Shows files changed in a certain commit
+    itec@git-tutorial:~$ git reset --soft HEAD~n # Reverts changes to the n'th commit, keeping the changed files intact
+```
+
+## Diff
+### Show the differences between two versions of a file or two branches of a repository
+```sh
+    itec@git-tutorial:~$ git diff # Shows the difference between the latest changes and the last commit 
+    itec@git-tutorial:~$ git diff branch_1 branch_2 # Shows the difference between branch_1 and branch_2
 ```
 
 ## Push
